@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.13/css/mdb.min.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -36,21 +40,16 @@
                 <a class="dropdown-item" href="#">Placeholder</a>
             </div>
         </li>
-        <!--Randomize-->
-        <li class="nav-item">
-              <a class="nav-link" href="#">Randomize</a>
-        </li>
         <!--Search Artist-->
         <li class="nav-item">
             <form class="form-inline">
                 <a class="nav-link active" id="artLovers" href="./harvard.html">Search Harvard</a>
             </form>
         </li>
-        <li class="nav-item">
-            <form class="form-inline">
-                <a class="nav-link active" id="artLovers" href="./smithsonian.html">Search Smithsonian</a>
-            </form>
-        </li>
+        <form class="form-inline md-form form-sm mt-0">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" id="searchSmith" type="text" placeholder="Search Smithsonian" aria-label="Search">
+        </form>
     </ul>
 
     <!--Picture and details-->
@@ -64,8 +63,8 @@
     <div class="card">
         <div class="card-header">
           Favorites List
-          <input id="addArt" type="submit" value="Add this artist" class="btn btn-primary">
-          <input id="removeArt" type="submit" value="Remove last artist" class="btn btn-primary">
+          <input type="button" class="btn btn-outline-secondary" id="addArt" type="submit" value="Add this artist">
+          <input type="button" class="btn btn-outline-secondary" id="removeArt" type="submit" value="Remove last artist">
         </div>
         <div class="card-body">
         </div>
