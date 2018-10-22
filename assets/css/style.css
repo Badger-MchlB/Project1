@@ -9,3 +9,7 @@ body{
 .space-right{
     padding-right: 20px;
 }
+
+.container{
+    padding-top: 30px;
+}

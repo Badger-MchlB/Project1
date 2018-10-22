@@ -1,7 +1,19 @@
+// Code from Ruslan which got us started.  We don't need this anymore
 // $.getJSON(
 //     'https://api.unsplash.com/photos/random?count=10&client_id=86a41cb71c29dc629f1a4ae0c17d467526ab93d5ba4e1053fd8b71f3d9ab314c', function(data){
 //    console.log(data);
 // })
+
+//document Ready function
+
+$( document ).ready(function() {
+  console.log( "ready!" );
+});
+
+// need to pull random artist with artwork image and have it show on page
+// need to have a search capable api link
+// need to hold locally favorite's details
+
 
     // Example queryURL for Giphy API
     // var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
