@@ -14,10 +14,6 @@ body{
     padding-top: 30px;
 }
 
-ul.nav li a, ul.nav li a:visited {
-    color: gray !important;
-}
-
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
@@ -72,4 +68,8 @@ ul.nav li a, ul.nav li a:visited {
 
 .close:hover {
     background: #00d9ff;
+}
+
+img{
+	padding-top: 30px;
 }
