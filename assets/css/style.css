@@ -14,10 +14,6 @@ body{
     padding-top: 30px;
 }
 
-ul.nav li a, ul.nav li a:visited {
-    color: white !important;
-}
-
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;

@@ -28,7 +28,7 @@
 
 
 </head>
-<body>
+<body background="./assets/Picture/concrete_seamless.png">
 
     <!--Navbar-->
     <ul class="nav justify-content-center">
@@ -41,19 +41,49 @@
                 <a class="nav-link active" id="links" href="./beer.html">Go to beer page</a>
             </form>
         </li>
-        <li class="nav-item">
-            <form class="form-inline">
-                <a class="nav-link active" id="links" href="./cocktail.html">Go to cocktail page</a>
-            </form>
-        </li>
+        <!--Search state-->
+        <form class="form-inline mr-auto">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search by name" aria-label="Search">
+            <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+        <!--Search Brewery-->
+            <input class="form-control mr-sm-2" type="text" placeholder="Search by ingredients" aria-label="Search">
+            <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+        </form>
     </ul>
 
-    <!--Search-->
-
-
-
+    <!--Cocktail info-->
+    <div class="card">
+            <div class="card-header">
+                COCKTAIL
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">/ˈkäkˌtāl/</h5>
+                <p class="card-text">noun</p>
+                <p class="card-text">noun: cocktail; plural noun: cocktails</p>
+                <p class="card-text">1.
+                        an alcoholic drink consisting of a spirit or several spirits mixed with other ingredients, such as fruit juice, lemonade, or cream.</p>
+                <p class="card-text">a mixture of substances or factors, especially when dangerous or unpleasant in its effects.</p>
+                <p class="card-text">"financial pressure plus isolation can be a deadly cocktail for some people"</p>
+                <p class="card-text">2.
+                        a dish consisting of small pieces of food, typically served cold at the beginning of a meal as an appetizer.</p>
+                <p class="card-text">"a chilled lobster cocktail prettily presented in a martini glass"</p>
+            </div>
+        </div>
+    
+        <!--Picture/Website-->
+        <img src="./assets/Picture/cocktails.jpg" alt="Beer" height="700" width="100%">
+    
+    
     <script type="text/javascript" src="./assets/js/app.js"></script>
     <script type="text/javascript" src="./assets/js/jemall.js"></script>
+    <script type="text/javascript" src="./assets/js/beer.js"></script>
+
+    <style>
+
+    ul.nav li a, ul.nav li a:visited {
+    color: black !important;}
+            
+    </style>
     
 </body>
 </html>
