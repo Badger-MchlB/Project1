@@ -73,3 +73,24 @@ body{
 img{
 	padding-top: 30px;
 }
+
+.nav{
+	font-size: 30px;
+	font-style: monospace;
+}
+
+#image{
+	float: left;
+	margin: 30px;
+}
+
+.hptext{
+	border-bottom: 5px solid white;
+	font-style: monospace;
+	color: white;
+	font-size: 60px;
+}
+
+.center{
+	margin-left: 50px;
+}
