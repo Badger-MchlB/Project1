@@ -8,10 +8,10 @@
 // A $( document ).ready() block.
 $( document ).ready(function() {
     console.log( "ready!" );
-});
-        
+
+        var searchResults   
         var searchState = "OH"
-        var searchBrewery = "cooper"
+        var searchBrewery = ""
         var pageNumber = "1"
         //api.openbrewerydb.org/breweries?by_state=
         //api.openbrewerydb.org/breweries?by_name=cooper
@@ -23,10 +23,30 @@ $( document ).ready(function() {
             method: "GET"
         }).then(function(response){
             
-            console.log(response)
+            console.log(response);
+            
+            
+            var breweryArray = []
+            for(i=0; i<response.length; i++){
+                console.log("in the for loop");
+                
+                
+                var breweryName = (response[i].name);
+                var breweryStreet = (response[i].street);
+                var breweryCity = (response[i].city);
+                var breweryState = (response[i].state);
+                var breweryZip = (response[i].postal_code);
+                var breweryPhone = (response[i].phone);
+                var breweryUrl = (response[i].website_url);
+                var breweryLongitude = (response[i].longitude);
+                var breweryLatitude = (response[i].latitude);
 
-        // for(i=0; i<response.length; i++){
-        //     var newDiv = $("<div>")
+                breweryArray[i] = [breweryName, breweryStreet, breweryState, breweryCity, breweryZip, breweryPhone, breweryUrl, breweryLongitude, breweryLatitude];
+                
+                console.log(breweryArray[i])
+            }
+
+                //     var newDiv = $("<div>")
         //         var dname = $("<p class='name-div'>").text(response[i].name)
         //             newDiv.append(dname)
 
@@ -53,5 +73,11 @@ $( document ).ready(function() {
 
         //     $("#artistArtwork").append(newDiv)
             
-        }
-        })
+        // console.log(breweryArray);
+        searchResults = breweryArray
+        
+    })
+        });
+
+
+        console.log("search results are ",searchResults);
