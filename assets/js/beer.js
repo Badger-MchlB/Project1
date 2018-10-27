@@ -1,18 +1,27 @@
-
-        // $('.carousel').carousel('next')
-        // $('.carousel').carousel('prev')
-
-        // $('#myCarousel').on('slide.bs.carousel', function () {
-        //     console.log("inside carousel")
-        // })
 // A $( document ).ready() block.
 $( document ).ready(function() {
     console.log( "ready!" );
 
-        var searchResults   
-        var searchState = "OH"
-        var searchBrewery = ""
-        var pageNumber = "1"
+    var breweryArray = []
+    var searchResults = []
+    var searchState = "OH"
+    var searchBrewery = ""
+    var pageNumber = "1"
+
+    // This function handles events where search state button is clicked
+
+$("#state-search").on("click", function(event) {
+    console.log("search state button click")
+
+    var searchState = $("#state-input").val().trim();
+    console.log("search state chosen is ",searchState);
+
+});
+
+
+    console.log ("we will search for the state of ", searchState);
+
+        
         //api.openbrewerydb.org/breweries?by_state=
         //api.openbrewerydb.org/breweries?by_name=cooper
         var queryURL = "https://api.openbrewerydb.org/breweries?by_name=" + searchBrewery + "&by_state" + searchState
@@ -26,7 +35,7 @@ $( document ).ready(function() {
             console.log(response);
             
             
-            var breweryArray = []
+            // var breweryArray = []
             for(i=0; i<response.length; i++){
                 console.log("in the for loop");
                 
@@ -43,8 +52,10 @@ $( document ).ready(function() {
 
                 breweryArray[i] = [breweryName, breweryStreet, breweryState, breweryCity, breweryZip, breweryPhone, breweryUrl, breweryLongitude, breweryLatitude];
                 
-                console.log(breweryArray[i])
-            }
+                searchResults.push(breweryArray[i]);
+
+             } //this is where the for loop ends 
+
 
                 //     var newDiv = $("<div>")
         //         var dname = $("<p class='name-div'>").text(response[i].name)
@@ -74,10 +85,16 @@ $( document ).ready(function() {
         //     $("#artistArtwork").append(newDiv)
             
         // console.log(breweryArray);
-        searchResults = breweryArray
+
+        test(breweryArray)
         
     })
-        });
+});
 
 
-        console.log("search results are ",searchResults);
+function test(arg){
+    console.log("OH!!! HERE IS THE ARRAY", arg)
+}
+
+
+// console.log("search results are ",searchResults);
