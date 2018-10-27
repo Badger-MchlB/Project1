@@ -14,7 +14,7 @@ body{
     padding-top: 30px;
 }
 
-ul.artLovers li a, ul.nav li a:visited {
+ul.nav li a, ul.nav li a:visited {
     color: gray !important;
 }
 

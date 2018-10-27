@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Art Lovers</title>
+    <title>Beer vs Cocktail</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -32,34 +32,17 @@
     <!--Navbar-->
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" id="artLovers" href="./index.html">Art Lovers Dream</a>
+            <a class="nav-link active" id="links" href="./homepage.html">Beer vs Cocktail</a>
         </li>
-        <!--Dropdown not working-->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Well known Artists</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-                <a class="dropdown-item" href="#">Placeholder</a>
-            </div>
-        </li>
-        <!--Search Artist-->
+        <!--Links to other html pages-->
         <li class="nav-item">
             <form class="form-inline">
-                <a class="nav-link active" id="artLovers" href="./harvard.html">Search Harvard</a>
+                <a class="nav-link active" id="links" href="./beer.html">Go to beer page</a>
             </form>
         </li>
         <li class="nav-item">
             <form class="form-inline">
-                <a class="nav-link active" id="artLovers" href="./smithsonian.html">Search Smithsonian</a>
+                <a class="nav-link active" id="links" href="./cocktail.html">Go to cocktail page</a>
             </form>
         </li>
     </ul>
@@ -137,6 +120,9 @@
 
                 var dcountry = $("<p class='country-div'>").text(response[i].country)
                     newDiv.append(dcountry)
+
+                var dphone = $("<p class='phone-div'>").text(response[i].phone)
+                    newDiv.append(dphone)
 
                 var dwebsite_url = $("<p class='website_url-div'>").text(response[i].website_url)
                     newDiv.append(dwebsite_url)
