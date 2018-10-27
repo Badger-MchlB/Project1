@@ -37,102 +37,39 @@
         <!--Links to other html pages-->
         <li class="nav-item">
             <form class="form-inline">
-                <a class="nav-link active" id="links" href="./beer.html">Go to beer page</a>
-            </form>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline">
                 <a class="nav-link active" id="links" href="./cocktail.html">Go to cocktail page</a>
             </form>
         </li>
+        <!--Search state-->
+        <form class="form-inline mr-auto">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search by state" aria-label="Search">
+            <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+        <!--Search Brewery-->
+            <input class="form-control mr-sm-2" type="text" placeholder="Search by Brewery" aria-label="Search">
+            <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+        </form>
     </ul>
 
-    <!--Websites-->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <iframe width="100%" framboarder=‘0’ src="http://www.brewbakersbrewingco.com" height="600px"></iframe>
+    <!--Beer info-->
+    <div class="card">
+        <div class="card-header">
+            BEER
         </div>
-        <div class="carousel-item">
-            <iframe width="100%" framboarder=‘0’ src="http://www.brewbakersbrewingco.com" height="600px"></iframe>
-        </div>
-        <div class="carousel-item">
-            <iframe width="100%" framboarder=‘0’ src="http://www.brewbakersbrewingco.com" height="600px"></iframe>
-        </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-    <!--Details-->
-    <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div id="artistArtwork"></div>
+        <div class="card-body">
+            <h5 class="card-title">/bir/</h5>
+            <p class="card-text">noun</p>
+            <p class="card-text">noun: beer; plural noun: beers</p>
+            <p class="card-text">an alcoholic drink made from yeast-fermented malt flavored with hops.</p>
+            <p class="card-text">"a pint of beer"</p>
         </div>
     </div>
 
-    <script>
+    <!--Picture/Website-->
 
-        $('.carousel').carousel('next')
-        $('.carousel').carousel('prev')
 
-        $('#myCarousel').on('slide.bs.carousel', function () {
-            console.log("inside carousel")
-        })
-    
-        var queryURL = "https://api.openbrewerydb.org/breweries?page=2&per_page=30"
-        console.log("ready")
-        
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function(response){
-            
-            console.log(response)
-
-        for(i=0; i<response.length; i++){
-            var newDiv = $("<div>")
-                var dname = $("<p class='name-div'>").text(response[i].name)
-                    newDiv.append(dname)
-
-                 var dstreet = $("<p class='street-div'>").text(response[i].street)
-                    newDiv.append(dstreet)
-
-                var dcity = $("<p class='city-div'>").text(response[i].city)
-                    newDiv.append(dcity)
-
-                var dstate = $("<p class='state-div'>").text(response[i].state)
-                    newDiv.append(dstate)
-
-                var dpostal_code = $("<p class='postal_code-div'>").text(response[i].postal_code)
-                    newDiv.append(dpostal_code)
-
-                var dcountry = $("<p class='country-div'>").text(response[i].country)
-                    newDiv.append(dcountry)
-
-                var dphone = $("<p class='phone-div'>").text(response[i].phone)
-                    newDiv.append(dphone)
-
-                var dwebsite_url = $("<p class='website_url-div'>").text(response[i].website_url)
-                    newDiv.append(dwebsite_url)
-
-            $("#artistArtwork").append(newDiv)
-            
-        }
-        })
-    
-        </script>
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/jemall.js"></script>
+    <script type="text/javascript" src="./assets/js/beer.js"></script>
     
 </body>
 </html>
