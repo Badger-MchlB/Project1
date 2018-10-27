@@ -15,7 +15,7 @@ body{
 }
 
 ul.nav li a, ul.nav li a:visited {
-    color: gray !important;
+    color: white !important;
 }
 
 .modalDialog {
@@ -72,4 +72,8 @@ ul.nav li a, ul.nav li a:visited {
 
 .close:hover {
     background: #00d9ff;
+}
+
+img{
+	padding-top: 30px;
 }
