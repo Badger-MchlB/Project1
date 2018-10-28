@@ -76,8 +76,14 @@
     <!-- Brewerys will get dumped here -->
     <div id="brewery-view"></div>
 
-    <!-- IFRAME will be located here -->
+    <!-- IFRAME for URL will be located here -->
     <iframe id="brewery-iframe" framboarder=‘0’ src="" height=“400” ></iframe>
+
+    <!-- IFRAME for google map will be located here -->
+    <iframe id="gmap-iframe" framboarder=‘0’ src="" height=“400” ></iframe>
+
+    <!-- latitude: "42.30411485"
+    longitude: "-71.3961924451932" -->
 
         <!--Beer info-->
         <div id="brewery-information" class="card">
@@ -86,7 +92,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="brewery-display-name">placeholder name</h5>
-                    <p class="card-text" id="brewery-display-url"></p>
+                    <p class="card-text" id="brewery-display-url">placeholder url</p>
                     <p class="card-text" id="brewery-display-street">2200 Jackson Street</p>
                     <p class="card-text" id="brewery-display-city">West Nyack</p>
                     <p class="card-text" id="brewery-display-state">New York</p>
@@ -101,6 +107,7 @@
     <!-- <script type="text/javascript" src="./assets/js/app.js"></script>
     <script type="text/javascript" src="./assets/js/jemall.js"></script> -->
     <script type="text/javascript" src="./assets/js/beer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&callback=initMap" type="text/javascript"></script>
 
     <style>
 

@@ -6,6 +6,7 @@ $( document ).ready(function() {
 //during initial site load, we need to hide the place holder card for brewery information
 $("#brewery-information").hide();
 $("#brewery-iframe").hide();
+$("#gmap-iframe").hide();
 
     var breweryArray = []
     var searchResults = []
@@ -20,6 +21,7 @@ $("#state-search").on("click", function(event) {
     //hide the place holder card for brewery information that may be on screen still
     $("#brewery-information").hide();
     $("#brewery-iframe").hide();
+    $("#gmap-iframe").hide();
 
     searchBrewery = ""
     searchState = $("#state-input").val().trim();
@@ -40,6 +42,7 @@ $("#brewery-search").on("click", function(event) {
     //hide the place holder card for brewery information that may be on screen still
     $("#brewery-information").hide();
     $("#brewery-iframe").hide();
+    $("#gmap-iframe").hide();
 
     searchState = ""
     searchBrewery = $("#brewery-input").val().trim();
@@ -158,14 +161,20 @@ function displayBreweryInfo () {
 
         $("#brewery-iframe").attr("src",response.website_url)
 
-            // var breweryLongitude = (response.longitude);
-            // var breweryLatitude = (response.latitude);
+        // https://www.google.com/maps/embed/v1/view?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&center=42.30411485,-71.3961924451932&zoom=18
+        // https://www.google.com/maps/embed/v1/view?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&center=-71.3961924451932,42.30411485&zoom=18
+        var breweryMap = ("https://www.google.com/maps/embed/v1/view?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&center="+response.latitude+","+response.longitude+"&zoom=18");
+
+        $("#gmap-iframe").attr("src",breweryMap)
+        console.log("gmap url is ",breweryMap);
+
 
             $("#brewery-information").show();
             $("#brewery-iframe").show();
-    
+            $("#gmap-iframe").show();
 
-
+            //gmp key= AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg
+            
 
 });
 
