@@ -3,7 +3,8 @@ body{
 }
 
 .nav{
-    padding-bottom: 30px;
+	padding-bottom: 30px;
+	margin-left: 150px;
 }
 
 .space-right{
@@ -97,4 +98,25 @@ img{
 
 #brewery-iframe, #gmap-iframe{
 	height: 400px;
+}
+
+#favorites{
+	margin-top: 30px;
+	margin-left: 170px;
+	width: 1120px;
+}
+
+#beer-definition{
+	margin-left: 170px;
+	width: 1120px;
+}
+
+.card{
+	margin-left: 170px;
+	width: 1120px;
+}
+
+#cocktailPicture{
+	margin-left: 170px;
+	width: 1120px;		
 }
