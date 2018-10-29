@@ -8,17 +8,21 @@ $("#brewery-information").hide();
 $("#brewery-iframe").hide();
 $("#gmap-iframe").hide();
 
-    var breweryArray = []
-    var searchResults = []
-    var searchState = ""
-    var searchBrewery = ""
-    var breweryId = ""
-    var breweryName = ""
-    var favCount = 0
-
+    var breweryArray = [];
+    var searchResults = [];
+    var searchState = "";
+    var searchBrewery = "";
+    var breweryId = "";
+    var breweryName = "";
+    var favCount = 0;
+    
     // creating variables for storage use later
+    var favIdArray = [];
+    var favNameArray = [];
     var newFavoriteId = ""
     var newFavoriteName = ""
+
+    getLocalStorageFavs();
 // This function handles events where search state button is clicked
 
 $("#state-search").on("click", function(event) {
@@ -117,7 +121,7 @@ $("#brewery-search").on("click", function(event) {
 // $(".movies").on("click") will only add listeners to elements that are on the page at that time
 $(document).on("click", ".breweryFromSearch", displayBreweryInfo);
 
-// Generic function for capturing the movie name from the data-attribute
+// Function for retrieving the brewery name from the data-attribute
 function displayBreweryInfo () {
     //clear all the buttons from previous search
     $("#brewery-view").empty();
@@ -168,12 +172,56 @@ $("#saveFav").on("click", function(event) {
     console.log("brewery name is ",breweryName)
 
 
-    // newFavoriteId = breweryId
+    favIdArray.push(breweryId);
+    favNameArray.push(breweryName);
     // newFavoriteName = breweryName
 
+
     // Store the username into localStorage using "localStorage.setItem"
-    localStorage.setItem("favoriteBreweryName", breweryName);
-    localStorage.setItem("favoriteBreweryId", breweryId);
+    localStorage.setItem("favoriteBreweryName", favNameArray);
+    localStorage.setItem("favoriteBreweryId", favIdArray);
 
 
 });
+
+
+// function to load favorites to buttons on page
+
+function getLocalStorageFavs(){
+
+    favIdArray = localStorage.getItem("favoriteBreweryId");
+    favNameArray = localStorage.getItem("favoriteBreweryName");
+
+    console.log("this is the stored favorites id array ",favIdArray)
+    console.log("this is the stored favorites names array ",favNameArray)
+
+            // var breweryArray = []
+            for(i=0; i<favIdArray.length; i++){  
+
+                
+                breweryId = favIdArray;
+                breweryName = favNameArray;
+                
+                //now we want to add buttons for each brewery name found
+                
+                // dynamicaly generating buttons for each name in the array.
+                var a = $("<button>");
+          
+                // Adding a class
+                a.addClass("breweryFromSearch");
+          
+                // Adding a data-attribute with a value of the brewery at index i
+                a.attr("data-name", breweryId);
+          
+                // Providing the button's text with a value of the movie at index i
+                a.text(breweryName);
+          
+                // Adding the button to the HTML
+                $("#favorites").append(a);
+
+             } //this is where the for loop ends 
+  
+
+
+
+}
