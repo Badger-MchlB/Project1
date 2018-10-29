@@ -94,3 +94,7 @@ img{
 .center{
 	margin-left: 50px;
 }
+
+#brewery-iframe, #gmap-iframe{
+	height: 400px;
+}
