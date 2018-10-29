@@ -12,7 +12,13 @@ $("#gmap-iframe").hide();
     var searchResults = []
     var searchState = ""
     var searchBrewery = ""
+    var breweryId = ""
+    var breweryName = ""
+    var favCount = 0
 
+    // creating variables for storage use later
+    var newFavoriteId = ""
+    var newFavoriteName = ""
 // This function handles events where search state button is clicked
 
 $("#state-search").on("click", function(event) {
@@ -80,20 +86,8 @@ $("#brewery-search").on("click", function(event) {
             // var breweryArray = []
             for(i=0; i<response.length; i++){                
                 
-                var breweryId = (response[i].id)
-                var breweryName = (response[i].name);
-                // var breweryStreet = (response[i].street);
-                // var breweryCity = (response[i].city);
-                // var breweryState = (response[i].state);
-                // var breweryZip = (response[i].postal_code);
-                // var breweryPhone = (response[i].phone);
-                // var breweryUrl = (response[i].website_url);
-                // var breweryLongitude = (response[i].longitude);
-                // var breweryLatitude = (response[i].latitude);
-
-                // breweryArray[i] = [breweryId, breweryName, breweryStreet, breweryState, breweryCity, breweryZip, breweryPhone, breweryUrl, breweryLongitude, breweryLatitude];
-                
-                // searchResults.push(breweryArray[i]);
+                breweryId = (response[i].id)
+                breweryName = (response[i].name);
                 
                 //now we want to add buttons for each brewery name found
                 
@@ -114,7 +108,6 @@ $("#brewery-search").on("click", function(event) {
 
              } //this is where the for loop ends 
 
-        test(breweryArray)
         
     });
 };
@@ -141,15 +134,6 @@ function displayBreweryInfo () {
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        
-        console.log("Response from ajax call is ",response);
-        console.log("brewry name is ",response.name)
-        console.log("brewry street is ",response.street)
-        console.log("brewry city is ",response.city)
-        console.log("brewry state is ",response.state)
-        console.log("brewry zip is ",response.postal_code)
-        console.log("brewry phone is ",response.phone)
-        console.log("brewry url is ",response.website_url)
                     
         $("#brewery-display-name").text(response.name)
         $("#brewery-display-url").text(response.website_url)
@@ -161,8 +145,6 @@ function displayBreweryInfo () {
 
         $("#brewery-iframe").attr("src",response.website_url)
 
-        // https://www.google.com/maps/embed/v1/view?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&center=42.30411485,-71.3961924451932&zoom=18
-        // https://www.google.com/maps/embed/v1/view?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&center=-71.3961924451932,42.30411485&zoom=18
         var breweryMap = ("https://www.google.com/maps/embed/v1/view?key=AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg&center="+response.latitude+","+response.longitude+"&zoom=18");
 
         $("#gmap-iframe").attr("src",breweryMap)
@@ -171,10 +153,7 @@ function displayBreweryInfo () {
 
             $("#brewery-information").show();
             $("#brewery-iframe").show();
-            $("#gmap-iframe").show();
-
-            //gmp key= AIzaSyDoygSTcYKM21ddzXrhhlMw5NAyhEADjRg
-            
+            $("#gmap-iframe").show();            
 
 });
 
@@ -182,9 +161,19 @@ function displayBreweryInfo () {
   }
 
 
-function test(arg){
-    console.log("OH!!! HERE IS THE ARRAY", arg)
-}
+// click event to store current brewery to favorites
+$("#saveFav").on("click", function(event) {
+    console.log("save to favorites button clicked")
+    console.log("brewery id is ",breweryId)
+    console.log("brewery name is ",breweryName)
 
 
-// console.log("search results are ",searchResults);
+    // newFavoriteId = breweryId
+    // newFavoriteName = breweryName
+
+    // Store the username into localStorage using "localStorage.setItem"
+    localStorage.setItem("favoriteBreweryName", breweryName);
+    localStorage.setItem("favoriteBreweryId", breweryId);
+
+
+});
