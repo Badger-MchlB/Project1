@@ -131,7 +131,6 @@ function displayBreweryInfo () {
     //also hide the beer definition card
     $("#beer-definition").hide();
    
-    var breweryId = $(this).attr("data-name");
     var queryURL = "https://api.openbrewerydb.org/breweries/" + breweryId
 
     console.log(queryURL);
@@ -155,6 +154,13 @@ function displayBreweryInfo () {
 
         $("#gmap-iframe").attr("src",breweryMap)
         console.log("gmap url is ",breweryMap);
+
+
+        // Adding 2 data-attributes with the value of the brewery
+    
+
+        // $("#saveFav").attr("data-name", response.id);
+        // $("#saveFav").attr("data-id", response.name);
 
 
             $("#brewery-information").show();
