@@ -103,3 +103,13 @@ img{
 #favorites{
 	margin-top: 30px;
 }
+
+.clickOnPic{
+	padding-left: 250px;
+}
+
+.clickOnText{
+	font-style: monospace;
+	color: white;
+	font-size: 60px;
+}
