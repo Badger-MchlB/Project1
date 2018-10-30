@@ -1,10 +1,23 @@
-# Project1
+# Beers Vs Cocktails
 
-Project Title: Art Lover's App
+## Summary:
 
-Team Member - Jemall Brown, Michael Boynton, Maria Cabral, Ruslan Tugov
-Project Description:  Application displays a random artist on each login with genre subsections to view other paintings, as well as have a favorite options
+For the beer fans, this application allows you to look up breweries based off of either their name, or the state; and then favorite ones you have visited to know which ones you enjoyed.  
 
-Sketch - wireframes (yes, napkin drawings are fine):
+For the cocktail fans, users can search up their favorite cocktails and find out just what goes into them and how to make them.  They can look up the cocktail using either the name of the cocktail, or searching based off of ingredients such as vodka or blue curacao.
 
-APIs to be used: Artsy API,RMN-GP Api
+### Online Demo
+Give the application a shot at []()
+
+## Technology Used
+
+[JavaScript]
+[HTML]
+[CSS]
+
+## The Team
+- [Jemall Brown](https://github.com/jemallbrown)
+- [Michael Boynton](https://github.com/Badger-MchlB)
+- [Maria Cabral](https://github.com/MariaEGC)
+- [Ruslan Tugov](https://github.com/ruslan04444)
+
