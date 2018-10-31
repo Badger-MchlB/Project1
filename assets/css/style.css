@@ -7,6 +7,11 @@ body{
 	margin-left: 150px;
 }
 
+#nav{
+	padding-bottom: 30px;
+	margin-left: 300px;
+}
+
 .space-right{
     padding-right: 20px;
 }
@@ -112,4 +117,19 @@ img{
 	font-style: monospace;
 	color: white;
 	font-size: 60px;
+}
+
+.card-body{
+    text-align: center;
+}
+.instr{
+
+padding: 5px;
+}
+
+.ingr{
+    padding: 5px;
+}
+.drimg{
+    padding: 30px;
 }

@@ -30,7 +30,7 @@
 <body background="./assets/Picture/concrete_seamless.png">
 
     <!--Navbar-->
-    <ul class="nav justify-content-center">
+    <ul class="nav justify-content-center" id="nav">
         <li class="nav-item">
             <a class="nav-link active" id="links" href="./homepage.html">Beer vs Cocktail</a>
         </li>
@@ -42,17 +42,14 @@
         </li>
         <!--Search name-->
         <form class="form-inline mr-auto">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search by name" aria-label="Search">
-            <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-        <!--Search ingredients-->
-            <input class="form-control mr-sm-2" type="text" placeholder="Search by ingredients" aria-label="Search">
-            <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+            <input id="name-input" class="form-control mr-sm-2" type="text" placeholder="Search by name" aria-label="Search">
+            <button id="btnName" class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
         </form>
     </ul>
 
     <div class="container">
     <!--Cocktail info-->
-    <div class="card">
+    <div id="showDrinks" class="card">
             <div class="card-header">
                 COCKTAIL
             </div>
@@ -64,7 +61,9 @@
         </div>
     
         <!--Picture/Website-->
-        <img id="cocktailPicture" src="./assets/Picture/cocktails.jpg" alt="Beer" width="100%">
+        <div id="img1">
+            <img id="cocktailPicture" src="./assets/Picture/cocktails.jpg" alt="Beer" width="100%">
+        </div>
 
         <!--Favorites-->
         <div id="favorites" class="card">
@@ -74,7 +73,6 @@
             <div class="card-body"></div>
         </div>
     </div>
-    
 
     <style>
 
@@ -84,8 +82,6 @@
     </style>
 
     <script type="text/javascript" src="./assets/js/app.js"></script>
-    <script type="text/javascript" src="./assets/js/jemall.js"></script>
-    <script type="text/javascript" src="./assets/js/beer.js"></script>
     
 </body>
 </html>
