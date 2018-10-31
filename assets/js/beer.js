@@ -27,6 +27,9 @@ $("#favorites").hide();
 // This function handles events where search state button is clicked
 
 $("#state-search").on("click", function(event) {
+    
+    event.preventDefault();
+
    console.log("search state button click")
 
    //hide the place holder card for brewery information that may be on screen still
@@ -49,6 +52,9 @@ $("#state-search").on("click", function(event) {
 
 $("#brewery-search").on("click", function(event) {
    console.log("search brewery button click")
+
+   event.preventDefault();
+
 
    //hide the place holder card for brewery information that may be on screen still
    $("#brewery-information").hide();
@@ -180,6 +186,15 @@ $("#saveFav").on("click", function(event) {
    var breweryId = $(this).attr("data-id");
    var breweryName = $(this).attr("data-name");
 
+   for (i = 0; i < favIdArray.length; i++) {
+       
+    if(breweryId === favIdArray[i]){
+        console.log ("already stored in memory")
+        return;
+    }
+
+};
+
    favIdArray.push(breweryId);
    favNameArray.push(breweryName);
 
@@ -193,7 +208,7 @@ $("#saveFav").on("click", function(event) {
    // Store the username and ID arrays into localStorage using "localStorage.setItem"
    localStorage.setItem("favoriteBreweryName", JSON.stringify(favNameArray));
    localStorage.setItem("favoriteBreweryId", JSON.stringify(favIdArray));
-
+    
 
 });
 
@@ -201,6 +216,10 @@ $("#saveFav").on("click", function(event) {
 // function to load favorites to buttons on page
 
 function getLocalStorageFavs(){
+
+    if (localStorage.getItem("favoriteBreweryId")=== null){
+        return;
+    };
 
     favIdArray = JSON.parse(localStorage.getItem("favoriteBreweryId"));
     console.log("this is the stored favorites id array ",favIdArray)
