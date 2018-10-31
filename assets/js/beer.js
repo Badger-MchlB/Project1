@@ -23,7 +23,7 @@ $("#favorites").hide();
    var newFavoriteId = ""
    var newFavoriteName = ""
 
-   // getLocalStorageFavs();
+   getLocalStorageFavs();
 // This function handles events where search state button is clicked
 
 $("#state-search").on("click", function(event) {
@@ -182,6 +182,7 @@ $("#saveFav").on("click", function(event) {
 
    favIdArray.push(breweryId);
    favNameArray.push(breweryName);
+
 
    console.log("brewery id is ",breweryId)
    console.log("brewery name is ",breweryName)
