@@ -159,6 +159,9 @@ function displayBreweryInfo () {
        $("#gmap-iframe").attr("src",breweryMap)
        console.log("gmap url is ",breweryMap);
 
+       $("#saveFav").attr("data-name", response.name);
+       $("#saveFav").attr("data-id", response.id);
+
 
            $("#brewery-information").show();
            $("#brewery-iframe").show();
@@ -174,8 +177,8 @@ function displayBreweryInfo () {
 $("#saveFav").on("click", function(event) {
    console.log("save to favorites button clicked")
 
-   var breweryId = $(this).attr("data-name");
-   var breweryName = $(this).attr("data-id");
+   var breweryId = $(this).attr("data-id");
+   var breweryName = $(this).attr("data-name");
 
    favIdArray.push(breweryId);
    favNameArray.push(breweryName);
@@ -196,51 +199,51 @@ $("#saveFav").on("click", function(event) {
 
 // function to load favorites to buttons on page
 
-// function getLocalStorageFavs(){
+function getLocalStorageFavs(){
 
-//     favIdArray = localStorage.getItem("favoriteBreweryId");
-//     console.log("this is the stored favorites id array ",favIdArray)
-//     // if (favIdArray) {
-//     //     favoriteBreweryID = JSON.parse(favIdArray);
-//     //     debugger
-//     //     console.log("this is the stored favorites id array after for loop ",favIdArray)
+    favIdArray = JSON.parse(localStorage.getItem("favoriteBreweryId"));
+    console.log("this is the stored favorites id array ",favIdArray)
+    // if (favIdArray) {
+    //     favoriteBreweryID = JSON.parse(favIdArray);
+    //     debugger
+    //     console.log("this is the stored favorites id array after for loop ",favIdArray)
 
-//     // }
+    // }
 
-//     favNameArray = localStorage.getItem("favoriteBreweryName");
-//     // if (favNameArray) {
-//     //     favoriteBreweryName = JSON.parse(favNameArray);
-//     // }
+    favNameArray = JSON.parse(localStorage.getItem("favoriteBreweryName"));
+    // if (favNameArray) {
+    //     favoriteBreweryName = JSON.parse(favNameArray);
+    // }
 
-//     console.log("this is the stored favorites names array ",favNameArray)
+    console.log("this is the stored favorites names array ",favNameArray)
 
-//             // var breweryArray = []
-//             for(i=0; i<favIdArray.length; i++){
-
-
-//                 breweryId = favIdArray;
-//                 breweryName = favNameArray;
-
-//                 //now we want to add buttons for each brewery name found
-
-//                 // dynamicaly generating buttons for each name in the array.
-//                 var a = $("<button>");
-
-//                 // Adding a class
-//                 a.addClass("breweryFromSearch");
-
-//                 // Adding a data-attribute with a value of the brewery at index i
-//                 a.attr("data-name", breweryId);
-
-//                 // Providing the button's text with a value of the movie at index i
-//                 a.text(breweryName);
-
-//                 // Adding the button to the HTML
-//                 $("#favorites").append(a);
-
-//              } //this is where the for loop ends
+            // var breweryArray = []
+            for(i=0; i<favIdArray.length; i++){
 
 
+                breweryId = favIdArray[i];
+                breweryName = favNameArray[i];
+
+                //now we want to add buttons for each brewery name found
+
+                // dynamicaly generating buttons for each name in the array.
+                var a = $("<button>");
+
+                // Adding a class
+                a.addClass("breweryFromSearch");
+
+                // Adding a data-attribute with a value of the brewery at index i
+                a.attr("data-name", breweryId);
+
+                // Providing the button's text with a value of the movie at index i
+                a.text(breweryName);
+
+                // Adding the button to the HTML
+                $("#favorites").append(a);
+
+             } //this is where the for loop ends
 
 
-// }
+             $("#favorites").show();
+
+}
