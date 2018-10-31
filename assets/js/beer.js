@@ -159,8 +159,8 @@ function displayBreweryInfo () {
 
             $("#brewery-information").show();
             $("#brewery-iframe").show();
-            $("#gmap-iframe").show();            
-
+            $("#gmap-iframe").show();   
+            
 });
 
 
