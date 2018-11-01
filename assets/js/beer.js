@@ -91,6 +91,13 @@ $("#brewery-search").on("click", function(event) {
 
            console.log("full response from ajax call is ",response);
 
+           if (response.length === 0){
+                console.log("Sorry.  Nothing found.  Please search again.")
+                $("#brewery-view").text( "<p>This is a test.</p>" );  
+                $("#beerPlaceHolderImg").hide();              
+                return;
+           }
+
            //after search, need to hide the place holder image
            $("#beerPlaceHolderImg").hide();
 
@@ -209,6 +216,7 @@ $("#saveFav").on("click", function(event) {
    localStorage.setItem("favoriteBreweryName", JSON.stringify(favNameArray));
    localStorage.setItem("favoriteBreweryId", JSON.stringify(favIdArray));
     
+   getLocalStorageFavs();
 
 });
 
