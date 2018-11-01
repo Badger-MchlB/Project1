@@ -103,6 +103,7 @@ img{
 
 #brewery-iframe, #gmap-iframe{
 	height: 400px;
+	width: 100%;
 }
 
 #favorites{
