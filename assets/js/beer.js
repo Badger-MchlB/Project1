@@ -1,6 +1,6 @@
 // A $( document ).ready() block.
 $( document ).ready(function() {
-    console.log( "ready!" );
+    // console.log( "ready!" );
  });
  
  //during initial site load, we need to hide the place holder card for brewery information
@@ -23,7 +23,7 @@ $( document ).ready(function() {
     var newFavoriteId = ""
     var newFavoriteName = ""
  
-    getLocalStorageFavs();
+    // getLocalStorageFavs();
  // This function handles events where search state button is clicked
  
  $("#state-search").on("click", function(event) {
@@ -139,7 +139,7 @@ $( document ).ready(function() {
     var breweryId = $(this).attr("data-name");
     var queryURL = "https://api.openbrewerydb.org/breweries/" + breweryId
  
-    console.log(queryURL);
+    // console.log(queryURL);
  
     $.ajax({
         url: queryURL,
@@ -181,7 +181,7 @@ $( document ).ready(function() {
  
  // click event to store current brewery to favorites
  $("#saveFav").on("click", function(event) {
-    console.log("save to favorites button clicked")
+    // console.log("save to favorites button clicked")
  
     var breweryId = $(this).attr("data-id");
     var breweryName = $(this).attr("data-name");
@@ -189,7 +189,7 @@ $( document ).ready(function() {
     for (i = 0; i < favIdArray.length; i++) {
         
      if(breweryId === favIdArray[i]){
-         console.log ("already stored in memory")
+        //  console.log ("already stored in memory")
          return;
      }
  
@@ -199,8 +199,8 @@ $( document ).ready(function() {
     favNameArray.push(breweryName);
  
  
-    console.log("brewery id is ",breweryId)
-    console.log("brewery name is ",breweryName)
+    // console.log("brewery id is ",breweryId)
+    // console.log("brewery name is ",breweryName)
  
     // newFavoriteName = breweryName
  
@@ -218,13 +218,13 @@ $( document ).ready(function() {
  function getLocalStorageFavs(){
  
      favIdArray = JSON.parse(localStorage.getItem("favoriteBreweryId"));
-     console.log("this is the stored favorites id array ",favIdArray)
+    //  console.log("this is the stored favorites id array ",favIdArray)
  
  
      favNameArray = JSON.parse(localStorage.getItem("favoriteBreweryName"));
    
  
-     console.log("this is the stored favorites names array ",favNameArray)
+    //  console.log("this is the stored favorites names array ",favNameArray)
  
              // var breweryArray = []
              for(i=0; i<favIdArray.length; i++){
