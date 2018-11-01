@@ -217,23 +217,12 @@ $("#saveFav").on("click", function(event) {
 
 function getLocalStorageFavs(){
 
-    if (localStorage.getItem("favoriteBreweryId")=== null){
-        return;
-    };
-
     favIdArray = JSON.parse(localStorage.getItem("favoriteBreweryId"));
     console.log("this is the stored favorites id array ",favIdArray)
-    // if (favIdArray) {
-    //     favoriteBreweryID = JSON.parse(favIdArray);
-    //     debugger
-    //     console.log("this is the stored favorites id array after for loop ",favIdArray)
 
-    // }
 
     favNameArray = JSON.parse(localStorage.getItem("favoriteBreweryName"));
-    // if (favNameArray) {
-    //     favoriteBreweryName = JSON.parse(favNameArray);
-    // }
+  
 
     console.log("this is the stored favorites names array ",favNameArray)
 
