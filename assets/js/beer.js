@@ -5,8 +5,10 @@ $( document ).ready(function() {
 //during initial site load, we need to hide the place holder card for brewery information
 $("#brewery-information").hide();
 $("#brewery-iframe").hide();
+$("#brewery-view").hide();
 $("#gmap-iframe").hide();
 $("#favorites").hide();
+$("#nothingFound").hide();
   var breweryArray = [];
   var searchResults = [];
   var searchState = "";
@@ -29,6 +31,7 @@ $("#state-search").on("click", function(event) {
   $("#brewery-information").hide();
   $("#brewery-iframe").hide();
   $("#gmap-iframe").hide();
+  $("#nothingFound").hide();
   searchBrewery = ""
   searchState = $("#state-input").val().trim();
   console.log("search state chosen is ",searchState);
@@ -43,6 +46,7 @@ $("#brewery-search").on("click", function(event) {
   $("#brewery-information").hide();
   $("#brewery-iframe").hide();
   $("#gmap-iframe").hide();
+  $("#nothingFound").hide();
   searchState = ""
   searchBrewery = $("#brewery-input").val().trim();
   console.log("search brewery chosen is ",searchBrewery);
@@ -64,8 +68,9 @@ $("#brewery-search").on("click", function(event) {
       console.log("full response from ajax call is ",response);
       if (response.length === 0){
         console.log("Sorry. Nothing found. Please search again.")
-        $("#brewery-view").text( "<p>This is a test.</p>" ); 
-        $("#beerPlaceHolderImg").hide();       
+        $("#nothingFound").show();
+        $("#nothingFound").text( "Sorry. Nothing found. Please search again." ); 
+             
         return;
       }
       //after search, need to hide the place holder image
@@ -86,7 +91,9 @@ $("#brewery-search").on("click", function(event) {
         a.text(breweryName);
         // Adding the button to the HTML
         $("#brewery-view").append(a);
+        $("#searchResultHeader").append("Search Results")
       } //this is where the for loop ends
+      $("#brewery-view").show();
   });
 };
 // on click function to go to specific brewery based on button click after user has performed the search
