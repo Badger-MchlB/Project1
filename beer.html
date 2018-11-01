@@ -32,7 +32,7 @@
     <!--Navbar-->
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" id="links" href="./homepage.html">Beer vs Cocktail</a>
+            <a class="nav-link active" id="links" href="./index.html">Beer vs Cocktail</a>
         </li>
         <!--Links to other html pages-->
         <li class="nav-item">
@@ -52,6 +52,10 @@
     </ul>
 
     <div class="container">
+
+    <!--Nothing Found-->
+    <div id="nothingFound"></div>
+
     <!--Beer info-->
     <div id="beer-definition" class="card">
         <div class="card-header">
@@ -81,22 +85,21 @@
     longitude: "-71.3961924451932" -->
 
         <!--Beer info-->
-        <div id="brewery-information" class="card">
-                <div class="card-header">
-                    Brewery Details
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title" id="brewery-display-name">placeholder name</h5>
-                    <p class="card-text" id="brewery-display-url">placeholder url</p>
-                    <p class="card-text" id="brewery-display-street">2200 Jackson Street</p>
-                    <p class="card-text" id="brewery-display-city">West Nyack</p>
-                    <p class="card-text" id="brewery-display-state">New York</p>
-                    <p class="card-text" id="brewery-display-zip">10032</p>
-                    <p class="card-text" id="brewery-display-phone">1 212 967-0987</p>
-                    <button id="saveFav" class="btn blue-gradient btn-rounded btn-sm my-0" type="button">Save To Favorites</button>
-                </div>
+    <div id="brewery-information" class="card">
+        <div class="card-header">
+            Brewery Details
+        </div>
+        <div class="card-body">
+                <h5 class="card-title" id="brewery-display-name">placeholder name</h5>
+                <p class="card-text" id="brewery-display-url">placeholder url</p>
+                <p class="card-text" id="brewery-display-street">2200 Jackson Street</p>
+                <p class="card-text" id="brewery-display-city">West Nyack</p>
+                <p class="card-text" id="brewery-display-state">New York</p>
+                <p class="card-text" id="brewery-display-zip">10032</p>
+                <p class="card-text" id="brewery-display-phone">1 212 967-0987</p>
+                <button id="saveFav" class="btn blue-gradient btn-rounded btn-sm my-0" type="button">Save To Favorites</button>
             </div>
-    
+        </div>
     </div>
 
     <!--Favorites-->
