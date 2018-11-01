@@ -103,6 +103,7 @@ img{
 
 #brewery-iframe, #gmap-iframe{
 	height: 400px;
+	width: 100%;
 }
 
 #favorites{
@@ -122,6 +123,7 @@ img{
 .card-body{
     text-align: center;
 }
+
 .instr{
 
 padding: 5px;
@@ -130,6 +132,14 @@ padding: 5px;
 .ingr{
     padding: 5px;
 }
+
 .drimg{
     padding: 30px;
+}
+
+#nothingFound{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	padding-bottom: 50px;
 }
