@@ -26,7 +26,6 @@ $("#nothingFound").hide();
 $("#state-search").on("click", function(event) {
   
   event.preventDefault();
-  console.log("search state button click")
   //hide the place holder card for brewery information that may be on screen still
   $("#brewery-information").hide();
   $("#brewery-iframe").hide();
@@ -34,13 +33,12 @@ $("#state-search").on("click", function(event) {
   $("#nothingFound").hide();
   searchBrewery = ""
   searchState = $("#state-input").val().trim();
-  console.log("search state chosen is ",searchState);
-  console.log ("we will search for the state of ", searchState);
+ 
   searchTriggered(searchState,searchBrewery)
 });
 // This function handles events where search brewery button is clicked
 $("#brewery-search").on("click", function(event) {
-  console.log("search brewery button click")
+  // console.log("search brewery button click")
   event.preventDefault();
   //hide the place holder card for brewery information that may be on screen still
   $("#brewery-information").hide();
@@ -49,8 +47,8 @@ $("#brewery-search").on("click", function(event) {
   $("#nothingFound").hide();
   searchState = ""
   searchBrewery = $("#brewery-input").val().trim();
-  console.log("search brewery chosen is ",searchBrewery);
-  console.log ("we will search for a brewery named ", searchBrewery);
+  // console.log("search brewery chosen is ",searchBrewery);
+  // console.log ("we will search for a brewery named ", searchBrewery);
   searchTriggered(searchState,searchBrewery)
 });
     //api.openbrewerydb.org/breweries?by_state=
@@ -58,16 +56,16 @@ $("#brewery-search").on("click", function(event) {
   function searchTriggered(arg1,arg2) {
     //clear any left over buttons from previous searches
     $("#brewery-view").empty();
-    console.log ("In the search function and we will search for a brewery named ", searchBrewery);
+    // console.log ("In the search function and we will search for a brewery named ", searchBrewery);
       var queryURL = "https://api.openbrewerydb.org/breweries?by_name=" + arg2 + "&by_state=" + arg1
-      console.log("the URL is ",queryURL)
+      // console.log("the URL is ",queryURL)
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response){
-      console.log("full response from ajax call is ",response);
+      // console.log("full response from ajax call is ",response);
       if (response.length === 0){
-        console.log("Sorry. Nothing found. Please search again.")
+        // console.log("Sorry. Nothing found. Please search again.")
         $("#nothingFound").show();
         $("#nothingFound").text( "Sorry. Nothing found. Please search again." ); 
              
@@ -105,9 +103,11 @@ function displayBreweryInfo () {
   $("#brewery-view").empty();
   //also hide the beer definition card
   $("#beer-definition").hide();
+  $("#nothingFound").hide();
+
   var breweryId = $(this).attr("data-name");
   var queryURL = "https://api.openbrewerydb.org/breweries/" + breweryId
-  console.log(queryURL);
+  // console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -126,7 +126,7 @@ function displayBreweryInfo () {
       $("#gmap-iframe").show();  
       
     $("#gmap-iframe").attr("src",breweryMap)
-    console.log("gmap url is ",breweryMap);
+    // console.log("gmap url is ",breweryMap);
     $("#saveFav").attr("data-name", response.name);
     $("#saveFav").attr("data-id", response.id);
       $("#brewery-information").show();
@@ -136,20 +136,20 @@ function displayBreweryInfo () {
  }
 // click event to store current brewery to favorites
 $("#saveFav").on("click", function(event) {
-  console.log("save to favorites button clicked")
+  // console.log("save to favorites button clicked")
   var breweryId = $(this).attr("data-id");
   var breweryName = $(this).attr("data-name");
   for (i = 0; i < favIdArray.length; i++) {
     
   if(breweryId === favIdArray[i]){
-    console.log ("already stored in memory")
+    // console.log ("already stored in memory")
     return;
   }
 };
   favIdArray.push(breweryId);
   favNameArray.push(breweryName);
-  console.log("brewery id is ",breweryId)
-  console.log("brewery name is ",breweryName)
+  // console.log("brewery id is ",breweryId)
+  // console.log("brewery name is ",breweryName)
   // newFavoriteName = breweryName
   // Store the username and ID arrays into localStorage using "localStorage.setItem"
   localStorage.setItem("favoriteBreweryName", JSON.stringify(favNameArray));
@@ -163,13 +163,13 @@ function getLocalStorageFavs(){
     return;
   };
   favIdArray = JSON.parse(localStorage.getItem("favoriteBreweryId"));
-  console.log("this is the stored favorites id array ",favIdArray)
+  // console.log("this is the stored favorites id array ",favIdArray)
 
   
   favNameArray = JSON.parse(localStorage.getItem("favoriteBreweryName"));
 
   
-  console.log("this is the stored favorites names array ",favNameArray)
+  // console.log("this is the stored favorites names array ",favNameArray)
       // var breweryArray = []
       for(i=0; i<favIdArray.length; i++){
         breweryId = favIdArray[i];

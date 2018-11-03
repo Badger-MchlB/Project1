@@ -1,5 +1,6 @@
 $(document).ready(function(e){
     $("#btnName").click(searchCoctail);
+    $("#favorites").hide();
 
     function searchCoctail(e){
         e.preventDefault(); //don't reload page
